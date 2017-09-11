@@ -1,0 +1,65 @@
+
+
+<section id="contact">
+			<div class="section-content">
+				<h1 class="section-header">Welcome to the <span class="content-header wow fadeIn " data-wow-delay="0.2s" data-wow-duration="2s"> Student Form</span></h1>
+				<h3>Enter your details to enter the new course!</h3>
+			</div>
+			<div class="contact-section">
+				<div class="container">
+					<form>
+						<div class="col-md-6 form-line">
+				  			<div class="form-group">
+				  				<label for="exampleInputUsername">Your name</label>
+						    	<input type="text" class="form-control" id="" placeholder=" Enter Name">
+					  		</div>
+					  		<div class="form-group">
+						    	<label for="exampleInputEmail">Email Address</label>
+						    	<input type="email" class="form-control" id="exampleInputEmail" placeholder=" Enter Email id">
+						  	</div>	
+						  	<div class="form-group">
+						    	<label for="telephone">Mobile No.</label>
+						    	<input type="tel" class="form-control" id="telephone" placeholder=" Enter 10-digit mobile no.">
+				  			</div>
+
+				  			<div class="form-group">
+							  <label for="gender">Gender</label>
+							    <select id="gender" name="gender" class="form-control">
+							      <option value="-1">Select</option>
+							      <option value="male">Male</option>
+								  <option value="female">Female</option>
+							    </select>
+							</div>
+
+							<div class="form-group">
+						        <label for="country">Country</label>
+						        <input name="country" id="country" class="form-control validate filter-input" [(ngModel)]="query" (keyup)=filter()> 
+						    </div>
+						     <div class="suggestions" *ngIf="filteredList.length > 0">
+						      <ul *ngFor="let item of filteredList">
+						        <li>
+						            <a (click)="select(item)">{{item}}</a>
+						        </li>
+						      </ul>
+						    </div>
+
+						</div>
+				  		<div class="col-md-6">
+				  			<div class="form-group">
+				  				<label for ="description"> Message</label>
+				  			 	<textarea  class="form-control" id="description" placeholder="Enter Your Message"></textarea>
+				  			</div>
+				  			<div>
+
+				  				<button type="button" class="btn btn-danger btn-lg submit"><i class="fa fa-paper-plane" aria-hidden="true"></i>  Send Message</button>
+				  			</div>
+				  			
+						</div>
+					</form>
+				</div>
+			</div>
+		</section>
+
+		<button [disabled]="buttonStatus" [class]="buttonStatus?'btn-lg btn btn-danger':' btn-lg btn btn-success'" (click)="myEvent($event)">This button is disabled</button>
+
+		<button [ngClass]="{'style1':'buttonStatus','style2':'buttonStatus'}">This button is</button>
